@@ -1,0 +1,16 @@
+version: "3"
+services:
+  dashmpay:
+    build: ./
+    environment:
+      RPC_USER: pivxrpc
+      RPC_PASSWORD: FHkrFBAUQ3vtTqdBRQCCF4S4asSmcnPnukq96gQvHn15
+      RPC_ALLOW_IP: "::/0"
+      STAKING: 1
+      LISTEN: 1
+      LOG_TIMESTAMPS: 1
+      MAX_CONNECTIONS: 256
+    volumes:
+      - ./wallet.dat:/root/.pivx/wallet.dat:Z
+    ports:
+      - "51473:51473"
